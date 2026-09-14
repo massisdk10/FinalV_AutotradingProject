@@ -1,0 +1,45 @@
+# Secrets
+.env
+*.session
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+logs/
+
+# Telegram/message exports
+channel_messages_*.json
+message_analysis_report.json
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary/cache files
+*.tmp
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Local message/data exports
+messages.json
+station_x_clean.json
+station_x_messages_*.json
+today_messages.txt

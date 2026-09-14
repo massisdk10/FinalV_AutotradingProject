@@ -1,0 +1,80 @@
+================================================================================
+📦 FILES TO UPLOAD FROM LOCAL TO RDP
+================================================================================
+
+CRITICAL: These files were updated locally but need to be uploaded to RDP!
+
+Upload from: C:\Users\nihed\Desktop\MASautotraderbot\CopyTrading
+Upload to:   C:\Users\Administrator\Desktop\MASautotraderbot\CopyTrading
+
+--------------------------------------------------------------------------------
+1. DATABASE FILES (UPDATED)
+--------------------------------------------------------------------------------
+✅ database/engine.py              - CRITICAL! ALTER TYPE removed from init_db()
+✅ database/crud.py                - Dual-search + PENDING_DETAILS filter
+✅ database/models.py              - Has PENDING_DETAILS enum
+
+--------------------------------------------------------------------------------
+2. EXECUTION FILES (UPDATED)
+--------------------------------------------------------------------------------
+✅ execution/trade_executor.py    - All 4 fixes (details_message_id + conditional close)
+
+--------------------------------------------------------------------------------
+3. LISTENER FILES (UPDATED)
+--------------------------------------------------------------------------------
+✅ listener/signal_listener.py    - Passes details_message_id
+
+--------------------------------------------------------------------------------
+4. MIGRATION SCRIPTS (NEW)
+--------------------------------------------------------------------------------
+✅ migrate_add_pending_details.py  - Database migration script
+✅ fix_enum_case.py                - Enum case fix script
+✅ verify_system.py                - System verification script
+✅ test_simulation.py              - Testing script (optional)
+
+--------------------------------------------------------------------------------
+5. DOCUMENTATION (NEW)
+--------------------------------------------------------------------------------
+✅ RDP_DEPLOYMENT_CHECKLIST.md    - Deployment guide
+
+================================================================================
+HOW TO UPLOAD
+================================================================================
+
+Method 1: Remote Desktop Copy-Paste
+------------------------------------
+1. Connect to RDP
+2. On local machine, select the files above
+3. Ctrl+C to copy
+4. On RDP, navigate to C:\Users\Administrator\Desktop\MASautotraderbot\CopyTrading
+5. Ctrl+V to paste
+6. Confirm overwrite when asked
+
+Method 2: Shared Folder / Network Drive
+----------------------------------------
+1. Copy files to shared folder accessible from RDP
+2. On RDP, copy from shared folder to:
+   C:\Users\Administrator\Desktop\MASautotraderbot\CopyTrading
+
+Method 3: Git (if using version control)
+-----------------------------------------
+1. Commit all changes on local machine
+2. Push to repository
+3. On RDP, pull latest changes
+
+================================================================================
+VERIFICATION AFTER UPLOAD
+================================================================================
+
+After uploading, run this on RDP:
+
+   python verify_system.py
+
+Expected output:
+   ✅ All checks should PASS (especially "Code Fixes")
+   ✅ No "ALTER TYPE found in init_db()" error
+
+Then you can run:
+   python main.py
+
+================================================================================
