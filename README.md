@@ -1,4 +1,4 @@
-# 🚀 CopyTrading — MT5 Private Execution System
+# 🚀 CopyTrading — MT5 Private Execution System 
 
 A deterministic, private, single-user MT5 execution system that automates trade execution based on structured Telegram signals.
 
